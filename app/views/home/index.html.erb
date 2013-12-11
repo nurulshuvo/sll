@@ -158,7 +158,7 @@
                                 <i class="icon-mobile-phone animate" data-animation="rollIn" data-delay="100"></i>
                                 <div class="margin20"></div>
                                 <h4>SMS Service</h4>
-                                <p>What is going out right now? <br />Want News Updates on the go? Type "start news" and send it to 2424.                              </p>
+                                <p><%= @sms_service %></p>
                             </div>
                         </div>
                         <div class="one-third column no-space">
@@ -166,7 +166,7 @@
                                 <i class="icon-music special animate" data-animation="rollIn" data-delay="300"></i>
                                 <div class="margin20"></div>
                                 <h4>IVR Service</h4>
-                                <p>Dial 16432 and listen to your favorite Songs, Unreleased tracks, Celebrity gossip, Recipies and much more for only 2TK/min! </p>
+                                <p><%= @ivr_service %></p>
                             </div>
                         </div>
                         <div class="one-third column no-space">
@@ -174,7 +174,7 @@
                                 <i class="icon-coffee special animate" data-animation="rollIn" data-delay="500"></i>
                                 <div class="margin20"></div>
                                 <h4>WAP Service</h4>
-                                <p>Browse unlimited collection of movies, Songs, Wallpapers, Games, Ringtones and download whatever you like.</p>
+                                <p><%= @wap_service %></p>
                             </div>
                         </div>
                 </div>
@@ -201,18 +201,15 @@
                             </ul>
                             <div class="tabs-vertical-frame-content two-third column last">
                                 <h3> SMS Based Services </h3>
-                                <p> SMS Short codes, to which mobile users can send text messages, regardless of their telecom service provider and get the desired response in the matter of seconds. They are integrated across all telecom operators to provide a seamless short code service experience to all the users across Bangladesh.  </p>
-                                <p> SLL Solutions is a Value Added Service provider. We have been working in Partnership with all operators to provide quality content and VAS.  </p>
+                                <p><%= @sms_based %></p>
                             </div>
                             <div class="tabs-vertical-frame-content two-third column last">
                                 <h3> IVR Based Services </h3>
-                                <p> We are providing the best Interactive Voice Response Services here in Bangladesh. Our enriched collection has over 1800 hrs of continuous mRadio service. </p>
-                <p> We have a huge collection of Old and newest song collection for all kind of users. Just browse your desired catagory, pick a song and listen! </p>
+                                <p><%= @ivr_based %></p>
                             </div>
                             <div class="tabs-vertical-frame-content two-third column last">
                                 <h3> WAP Based Services </h3>
-                                <p> We have an ultimate varity of WAP/GPRS based services. We are also introducing premium services like full movies on the go...  </p>
-                                <p> We are giving away a master collection of wallpapers, news clips, movies, animations, poly tones, true tones, mp3 tones, themes, games and many many more.. </p>
+                                <p><%= @wap_based %></p>
                             </div>
                         </div>
                         <div class="margin30"></div>
@@ -220,20 +217,25 @@
                         <div class="margin25"></div>
                         <div class="testimonial-wrapper">
                           <ul class="quotes_wrapper">
+                            <% @testimonials.each do |t| %>
                                 <li>
                                     <figure class="testimonial-thumb animate" data-animation="fadeInUp">
                                         <span class="item-mask"> </span>
-                                        <img class="thumb-image" src="<%= asset_path('post-images/author.jpg')%>" alt="" title="" width="180" height="206" />
+                                        <img class="thumb-image" src="<%= t.image_url.to_s %>" alt="" title="" width="180" height="206" />
                                     </figure>
                                     <div class="testimonial-content-wrapper">
                                         <div class="author-meta">
-                                            <p>Abdul Mannan</p>
-                                            <span>Senior Director</span>
+                                            <p><%= t.who_said %></p>
+                                            <span><%= t.about %></span>
                                         </div>
-                                        <blockquote> SLL Solutions is providing world class services here in Bangladesh. Wishing them all the best. </blockquote>
+                                        <blockquote><%= t.body %></blockquote>
                                     </div>
                                 </li>
-                                <li>
+
+                                <% end %>
+
+
+                                <!-- <li>
                                     <figure class="testimonial-thumb alignright animate" data-animation="fadeInUp">
                                         <span class="item-mask"> </span>
                                         <img class="thumb-image" src="<%= asset_path('post-images/author1.jpg')%>" alt="" title="" width="180" height="206" />
@@ -258,7 +260,7 @@
                                         </div>
                                         <blockquote> SLL Solutions should be the pioneer for others in the market. Customer services are very good. </blockquote>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -355,7 +357,7 @@
                 </div>
                 <div class="content-main">
                   <div class="container">
-                      <img src="<%= asset_path('about.png')%>" alt="about" title="" class="aligncenter aboutImg animate" data-animation="fadeInDown" />
+                      <img src="<%= @about.image_url.to_s %>" alt="about" title="" class="aligncenter aboutImg animate" data-animation="fadeInDown" />
                         <div class="margin30"></div>
                         <div class="one-half column">
                           <h4 class="border-title">How it is the best App?<span></span></h4>
@@ -512,15 +514,25 @@
                                 <div class="margin20"> </div>
                                 
                                 <div id="ajax_contact_msg"></div>
-                                <form name="frmcontact" action="php/send.php" class="contact-frm" method="post" />
-                                    <input type="text" required="" placeholder="Name" name="txtname" />
+
+
+                                <%= form_for(@contact, html:{class: "contact-frm"}, remote: true) do |f| %>
+
+                                    <%= f.text_field :name, required: true, placeholder: "Name" %>
                                     <p class="twocolumn">
-                                        <input type="email" required="" placeholder="Email" name="txtemail" />
-                                        <input type="tel" placeholder="Phone" name="txtphone" />
+
+                                        <%= f.email_field :email, required: true, placeholder: "Email" %>
+                                        <%= f.phone_field :phone, placeholder: "Phone" %>
+
                                     </p>
-                                    <textarea placeholder="Message" name="txtmessage"></textarea>
-                                    <input type="submit" class="button" value="Submit" name="btnsend" />
-                                </form>
+                                    <%= f.text_area :body, placeholder: "Message", required: true %>
+
+
+                                    <%= f.submit "Submit", class: "button" %>
+                                <% end %>
+
+
+
                             </div>
                         </div>
                     </div>

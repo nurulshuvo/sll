@@ -1,0 +1,2 @@
+module WapServicesHelper
+end

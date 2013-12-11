@@ -1,0 +1,29 @@
+<h1>Listing get_connected_and_let_knows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @get_connected_and_let_knows.each do |get_connected_and_let_know| %>
+      <tr>
+        <td><%= get_connected_and_let_know.title %></td>
+        <td><%= get_connected_and_let_know.body %></td>
+        <td><%= link_to 'Show', get_connected_and_let_know %></td>
+        <td><%= link_to 'Edit', edit_get_connected_and_let_know_path(get_connected_and_let_know) %></td>
+        <td><%= link_to 'Destroy', get_connected_and_let_know, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Get connected and let know', new_get_connected_and_let_know_path %>

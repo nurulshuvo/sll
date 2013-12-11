@@ -1,0 +1,27 @@
+<h1>Listing sms_services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sms_services.each do |sms_service| %>
+      <tr>
+        <td><%= sms_service.body %></td>
+        <td><%= link_to 'Show', sms_service %></td>
+        <td><%= link_to 'Edit', edit_sms_service_path(sms_service) %></td>
+        <td><%= link_to 'Destroy', sms_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sms service', new_sms_service_path %>

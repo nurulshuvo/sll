@@ -1,0 +1,21 @@
+<%= form_for(@ivr_based) do |f| %>
+  <% if @ivr_based.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ivr_based.errors.count, "error") %> prohibited this ivr_based from being saved:</h2>
+
+      <ul>
+      <% @ivr_based.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,37 @@
 SllSolutions::Application.routes.draw do
+  resources :contacts
+
+  resources :partners
+
+  resources :our_growths
+
+  resources :get_connected_and_let_knows
+
+  resources :how_is_best_apps
+
+  devise_for :admins
+  resources :testimonials
+  resources :abouts
+  resources :wap_baseds
+
+  resources :ivr_baseds
+
+  resources :sms_baseds
+
+  resources :wap_services
+
+  resources :ivr_services
+
+  resources :sms_services
+
+
   root to: "home#index"
+
+%w(services testimonials about our_partners contact).each do |r|
+  get "admin/#{r}" => "admin_pannel##{r}"
+end
+get 'admin' => 'admin_pannel#home'
+
   # get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,27 @@
+<h1>Listing wap_services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wap_services.each do |wap_service| %>
+      <tr>
+        <td><%= wap_service.body %></td>
+        <td><%= link_to 'Show', wap_service %></td>
+        <td><%= link_to 'Edit', edit_wap_service_path(wap_service) %></td>
+        <td><%= link_to 'Destroy', wap_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wap service', new_wap_service_path %>

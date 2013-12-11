@@ -1,0 +1,301 @@
+<!-- Header -->
+<div id="header">
+  <div class="shell">
+    <!-- Logo + Top Nav -->
+    <div id="top">
+      <h1><a href="#">SLL Solutions</a></h1>
+      <div id="top-navigation">
+        Welcome <a href="#"><strong>Administrator</strong></a>
+        <span>|</span>
+        <a href="#">Log out</a>
+      </div>
+    </div>
+    <!-- End Logo + Top Nav -->
+    
+    <!-- Main Nav -->
+    <div id="navigation">
+      <ul>
+          <li><a href="#"><span>Home</span></a></li>
+          <li><a href="#"><span>Services</span></a></li>
+          <li><a href="#"><span>Testimonials</span></a></li>
+          <li><a href="#" class="active"><span>About</span></a></li>
+          <li><a href="#"><span>Our Partners</span></a></li>
+          <li><a href="#"><span>Contact</span></a></li>
+          <li><a href="#"><span>User Management</span></a></li>
+      </ul>
+    </div>
+    <!-- End Main Nav -->
+  </div>
+</div>
+<!-- End Header -->
+
+<!-- Container -->
+<div id="container">
+  <div class="shell">
+    
+    <!-- Small Nav -->
+
+    <!-- End Small Nav -->
+    
+    <!-- Message OK -->   
+    <div class="msg msg-ok">
+      <p><strong>Your file was uploaded succesifully!</strong></p>
+      <a href="#" class="close">close</a>
+    </div>
+    <!-- End Message OK -->   
+    
+    <!-- Message Error -->
+    <div class="msg msg-error">
+      <p><strong>You must select a file to upload first!</strong></p>
+      <a href="#" class="close">close</a>
+    </div>
+    <!-- End Message Error -->
+    <br />
+    <!-- Main -->
+    <div id="main">
+      <div class="cl">&nbsp;</div>
+      
+      <!-- Content -->
+      <div id="content">
+        
+
+        
+        <!-- Box -->
+        <div class="box">
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2>about</h2>
+          </div>
+          <!-- End Box Head -->
+          
+          <%= form_for(@about, html: {multipart: true }) do |f| %>
+
+              <% if @about.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@about.errors.count, "error") %> prohibited this sms_service from being saved:</h2>
+
+                    <ul>
+                    <% @about.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+              <% end %>
+
+            <!-- Form -->
+            <div class="form">
+                
+                <p>
+                  <label>Image for Big Slider(923x447) <span>(Required Field)</span></label>
+                  <%= f.file_field :image, class: "field size1" %>
+                </p>
+              
+            </div>
+            <!-- End Form -->
+            
+            <!-- Form Buttons -->
+            <div class="buttons">
+              <%= f.submit "Submit", class: "button" %>
+            </div>
+            <!-- End Form Buttons -->
+          <% end %>
+
+        </div>
+        <!-- End Box -->
+
+
+        <!-- Box -->
+        <div class="box">
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2>Left Text</h2>
+          </div>
+          <!-- End Box Head -->
+          
+          <%= form_for(@how_is_best_app) do |f| %>
+
+              <% if @how_is_best_app.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@how_is_best_app.errors.count, "error") %> prohibited this sms_service from being saved:</h2>
+
+                    <ul>
+                    <% @how_is_best_app.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+            <!-- Form -->
+            <div class="form">
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Heading <span>(Required Field)</span></label>
+                  <%= f.text_field :title, class: "field size1" %>
+                </p>
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Content <span>(Required Field)</span></label>
+                  <%= f.text_area :body, class: "field size1", rows: 10, cols: 10 %>
+                </p>
+              
+            </div>
+            <!-- End Form -->
+            
+            <!-- Form Buttons -->
+            <div class="buttons">
+              <%= f.submit "Submit", class: "button" %>
+            </div>
+            <!-- End Form Buttons -->
+          <% end %>
+
+          <div class="box-head">
+            <h2>Upper Right Text</h2>
+          </div>
+          <!-- End Box Head -->
+          
+          <%= form_for(@get_connected_and_let_know) do |f| %>
+
+              <% if @get_connected_and_let_know.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@get_connected_and_let_know.errors.count, "error") %> prohibited this sms_service from being saved:</h2>
+
+                    <ul>
+                    <% @get_connected_and_let_know.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+            <!-- Form -->
+            <div class="form">
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Heading <span>(Required Field)</span></label>
+                  <%= f.text_field :title, class: "field size1" %>
+                </p>
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Content <span>(Required Field)</span></label>
+                  <%= f.text_area :body, class: "field size1", rows: 10, cols: 10 %>
+                </p>
+              
+            </div>
+            <!-- End Form -->
+            
+            <!-- Form Buttons -->
+            <div class="buttons">
+              <%= f.submit "Submit", class: "button" %>
+            </div>
+            <!-- End Form Buttons -->
+          <% end %>
+
+
+
+          <div class="box-head">
+            <h2>Lower Right Text</h2>
+          </div>
+          <!-- End Box Head -->
+          
+          <%= form_for(@our_growth) do |f| %>
+
+              <% if @our_growth.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@our_growth.errors.count, "error") %> prohibited this sms_service from being saved:</h2>
+
+                    <ul>
+                    <% @our_growth.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+            <!-- Form -->
+            <div class="form">
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Heading <span>(Required Field)</span></label>
+                  <%= f.text_field :title, class: "field size1" %>
+                </p>
+                <p>
+                  <span class="req">max 100 symbols</span>
+                  <label>Content <span>(Required Field)</span></label>
+                  <%= f.text_area :body, class: "field size1", rows: 10, cols: 10 %>
+                </p>
+              
+            </div>
+            <!-- End Form -->
+            
+            <!-- Form Buttons -->
+            <div class="buttons">
+              <%= f.submit "Submit", class: "button" %>
+            </div>
+            <!-- End Form Buttons -->
+          <% end %>
+
+        </div>
+        <!-- End Box -->
+
+
+      </div>
+      <!-- End Content -->
+      
+      <!-- Sidebar -->
+      <div id="sidebar">
+        
+        <!-- Box -->
+        <div class="box">
+          
+          <!-- Box Head -->
+          <div class="box-head">
+            <h2>Management</h2>
+          </div>
+          <!-- End Box Head-->
+          
+          <div class="box-content">
+            <a href="#" class="add-button"><span>Add new Article</span></a>
+            <div class="cl">&nbsp;</div>
+            
+            <p class="select-all"><input type="checkbox" class="checkbox" /><label>select all</label></p>
+            <p><a href="#">Delete Selected</a></p>
+            
+            <!-- Sort -->
+            <div class="sort">
+              <label>Sort by</label>
+              <select class="field">
+                <option value="">Title</option>
+              </select>
+              <select class="field">
+                <option value="">Date</option>
+              </select>
+              <select class="field">
+                <option value="">Author</option>
+              </select>
+            </div>
+            <!-- End Sort -->
+            
+          </div>
+        </div>
+        <!-- End Box -->
+      </div>
+      <!-- End Sidebar -->
+      
+      <div class="cl">&nbsp;</div>      
+    </div>
+    <!-- Main -->
+  </div>
+</div>
+<!-- End Container -->
+
+<!-- Footer -->
+<div id="footer">
+  <div class="shell">
+    <span class="left">&copy; <%= Date.today.year %> - SllSolutions</span>
+    <span class="right">
+      Design by Md. Nurul Amin Shuvo
+    </span>
+  </div>
+</div>
+<!-- End Footer -->

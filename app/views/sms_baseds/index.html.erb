@@ -1,0 +1,27 @@
+<h1>Listing sms_baseds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sms_baseds.each do |sms_based| %>
+      <tr>
+        <td><%= sms_based.body %></td>
+        <td><%= link_to 'Show', sms_based %></td>
+        <td><%= link_to 'Edit', edit_sms_based_path(sms_based) %></td>
+        <td><%= link_to 'Destroy', sms_based, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sms based', new_sms_based_path %>

@@ -1,0 +1,27 @@
+<h1>Listing ivr_baseds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ivr_baseds.each do |ivr_based| %>
+      <tr>
+        <td><%= ivr_based.body %></td>
+        <td><%= link_to 'Show', ivr_based %></td>
+        <td><%= link_to 'Edit', edit_ivr_based_path(ivr_based) %></td>
+        <td><%= link_to 'Destroy', ivr_based, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ivr based', new_ivr_based_path %>

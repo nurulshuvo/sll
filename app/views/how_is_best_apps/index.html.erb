@@ -1,0 +1,29 @@
+<h1>Listing how_is_best_apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @how_is_best_apps.each do |how_is_best_app| %>
+      <tr>
+        <td><%= how_is_best_app.title %></td>
+        <td><%= how_is_best_app.body %></td>
+        <td><%= link_to 'Show', how_is_best_app %></td>
+        <td><%= link_to 'Edit', edit_how_is_best_app_path(how_is_best_app) %></td>
+        <td><%= link_to 'Destroy', how_is_best_app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New How is best app', new_how_is_best_app_path %>

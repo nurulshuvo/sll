@@ -1,0 +1,2 @@
+module WapBasedsHelper
+end
