@@ -28,10 +28,10 @@ class GetConnectedAndLetKnowsController < ApplicationController
 
     respond_to do |format|
       if @get_connected_and_let_know.save
-        format.html { redirect_to @get_connected_and_let_know, notice: 'Get connected and let know was successfully created.' }
+        format.html { redirect_to admin_about_path, notice: 'Successfully created.' }
         format.json { render action: 'show', status: :created, location: @get_connected_and_let_know }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_about_path, notice: 'Failed.' }
         format.json { render json: @get_connected_and_let_know.errors, status: :unprocessable_entity }
       end
     end

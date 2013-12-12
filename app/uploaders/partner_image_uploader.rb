@@ -27,7 +27,7 @@ class PartnerImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [100, 160]
 
-  process :resize_to_fill => [100, 160]
+  process :resize_to_fill => [160, 150]
   #
   # def scale(width, height)
   #   # do something

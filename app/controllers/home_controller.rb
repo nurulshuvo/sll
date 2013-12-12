@@ -10,5 +10,13 @@ class HomeController < ApplicationController
 
     @testimonials = Testimonial.all
     @about = About.last
+
+    @how_is_best_app = HowIsBestApp.last
+    @get_connected = GetConnectedAndLetKnow.last
+    @our_growth = OurGrowth.last
+
+    @telecom = Partner.where(category: "Telecom Operators")
+    @media = Partner.where(category: "Media Partner")
+    @other = Partner.where(category: "Other")
   end
 end

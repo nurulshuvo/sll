@@ -28,10 +28,10 @@ class HowIsBestAppsController < ApplicationController
 
     respond_to do |format|
       if @how_is_best_app.save
-        format.html { redirect_to @how_is_best_app, notice: 'How is best app was successfully created.' }
+        format.html { redirect_to admin_about_path, notice: 'Successfully created.' }
         format.json { render action: 'show', status: :created, location: @how_is_best_app }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_about_path, notice: 'Failed' }
         format.json { render json: @how_is_best_app.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +42,7 @@ class HowIsBestAppsController < ApplicationController
   def update
     respond_to do |format|
       if @how_is_best_app.update(how_is_best_app_params)
-        format.html { redirect_to @how_is_best_app, notice: 'How is best app was successfully updated.' }
+        format.html { redirect_to admin_about_path, notice: 'How is best app was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -15,4 +15,5 @@
 //= require jquery.ui.all
 //= require turbolinks
 //= require manifest
+//= require ckeditor-jquery
 //= require_tree .

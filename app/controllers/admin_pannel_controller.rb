@@ -26,6 +26,7 @@ layout 'admin_layout'
 
   def our_partners
     @partner = Partner.new
+    @partners = Partner.all
   end
 
   def contact

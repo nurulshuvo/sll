@@ -28,10 +28,10 @@ class OurGrowthsController < ApplicationController
 
     respond_to do |format|
       if @our_growth.save
-        format.html { redirect_to @our_growth, notice: 'Our growth was successfully created.' }
+        format.html { redirect_to admin_about_path, notice: 'Successfully created.' }
         format.json { render action: 'show', status: :created, location: @our_growth }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_about_path, notice: 'Failed' }
         format.json { render json: @our_growth.errors, status: :unprocessable_entity }
       end
     end

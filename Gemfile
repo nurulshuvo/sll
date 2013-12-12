@@ -38,6 +38,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'ckeditor_rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

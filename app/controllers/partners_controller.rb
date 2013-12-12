@@ -28,10 +28,10 @@ class PartnersController < ApplicationController
 
     respond_to do |format|
       if @partner.save
-        format.html { redirect_to @partner, notice: 'Partner was successfully created.' }
+        format.html { redirect_to admin_our_partners_path, notice: 'Partner was successfully created.' }
         format.json { render action: 'show', status: :created, location: @partner }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_our_partners_path, notice: 'Failed.' }
         format.json { render json: @partner.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class PartnersController < ApplicationController
   def destroy
     @partner.destroy
     respond_to do |format|
-      format.html { redirect_to partners_url }
+      format.html { redirect_to admin_our_partners_path, notice: "Deleted" }
       format.json { head :no_content }
     end
   end
