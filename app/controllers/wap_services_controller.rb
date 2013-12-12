@@ -1,5 +1,6 @@
 class WapServicesController < ApplicationController
   before_action :set_wap_service, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /wap_services
   # GET /wap_services.json

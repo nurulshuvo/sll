@@ -1,5 +1,6 @@
 class IvrBasedsController < ApplicationController
   before_action :set_ivr_based, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /ivr_baseds
   # GET /ivr_baseds.json

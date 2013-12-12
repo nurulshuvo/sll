@@ -1,5 +1,6 @@
 class OurGrowthsController < ApplicationController
   before_action :set_our_growth, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /our_growths
   # GET /our_growths.json

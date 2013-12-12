@@ -1,5 +1,6 @@
 class WapBasedsController < ApplicationController
   before_action :set_wap_based, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /wap_baseds
   # GET /wap_baseds.json

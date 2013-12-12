@@ -1,5 +1,6 @@
 class SmsBasedsController < ApplicationController
   before_action :set_sms_based, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /sms_baseds
   # GET /sms_baseds.json

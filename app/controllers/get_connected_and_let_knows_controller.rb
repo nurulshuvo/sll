@@ -1,5 +1,6 @@
 class GetConnectedAndLetKnowsController < ApplicationController
   before_action :set_get_connected_and_let_know, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /get_connected_and_let_knows
   # GET /get_connected_and_let_knows.json

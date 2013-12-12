@@ -1,5 +1,6 @@
 class HowIsBestAppsController < ApplicationController
   before_action :set_how_is_best_app, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /how_is_best_apps
   # GET /how_is_best_apps.json

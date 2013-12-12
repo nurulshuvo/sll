@@ -1,5 +1,6 @@
 class SmsServicesController < ApplicationController
   before_action :set_sms_service, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /sms_services
   # GET /sms_services.json

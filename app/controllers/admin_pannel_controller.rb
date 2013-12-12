@@ -1,5 +1,6 @@
 class AdminPannelController < ApplicationController
-layout 'admin_layout'
+  before_filter :authenticate_admin!
+  layout 'admin_layout'
 
   def home
     @sms_service = SmsService.new
