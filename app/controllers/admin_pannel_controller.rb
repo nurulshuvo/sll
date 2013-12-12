@@ -5,6 +5,7 @@ layout 'admin_layout'
     @sms_service = SmsService.new
     @ivr_service = IvrService.new
     @wap_service = WapService.new
+    # raise params.inspect
   end
 
   def services
