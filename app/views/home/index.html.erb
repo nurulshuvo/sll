@@ -357,7 +357,7 @@
                 </div>
                 <div class="content-main">
                   <div class="container">
-                      <img src="<%= @about.image_url.to_s %>" alt="about" title="" class="aligncenter aboutImg animate" data-animation="fadeInDown" />
+                      <img src="<%= @about.try(:image_url.to_s) %>" alt="about" title="" class="aligncenter aboutImg animate" data-animation="fadeInDown" />
                         <div class="margin30"></div>
                         <div class="one-half column">
                           <h4 class="border-title"><%= @how_is_best_app.try(:title) %><span></span></h4>

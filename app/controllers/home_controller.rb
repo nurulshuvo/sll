@@ -1,12 +1,12 @@
 class HomeController < ApplicationController
   def index
     @contact = Contact.new
-    @sms_service = SmsService.last.body
-    @ivr_service = IvrService.last.body
-    @wap_service = WapService.last.body
-    @sms_based = SmsBased.last.body
-    @ivr_based = IvrBased.last.body
-    @wap_based = WapBased.last.body
+    @sms_service = SmsService.last.try(:body)
+    @ivr_service = IvrService.last.try(:body)
+    @wap_service = WapService.last.try(:body)
+    @sms_based = SmsBased.last.try(:body)
+    @ivr_based = IvrBased.last.try(:body)
+    @wap_based = WapBased.last.try(:body)
 
     @testimonials = Testimonial.all
     @about = About.last
