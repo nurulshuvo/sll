@@ -33,12 +33,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'devise'
 
 gem 'carrierwave'
 gem 'rmagick'
 
 gem 'ckeditor_rails'
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
